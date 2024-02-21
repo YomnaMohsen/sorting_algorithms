@@ -30,6 +30,8 @@ void quick_sort(int *array, size_t size);
 void quick_sort_recur(int *arr, int low, int heigh, size_t size);
 int partition(int *array, int low, int heigh,  size_t size);
 void swap(int *n1, int *n2);
+int partition_hoare(int *array, int low, int heigh,  size_t size);
+void quick_sort_hoare(int *array, size_t size);
 
 #endif
 

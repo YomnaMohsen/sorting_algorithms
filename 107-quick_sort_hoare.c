@@ -1,11 +1,11 @@
 #include "sort.h"
 /**
- * quick_sort - sort int array )Lomuto
+ * quick_sort_horae - sort int array (Hoare)
  * @array: array of int
  * @size: size of array
  * Return: Nothing
 */
-void quick_sort(int *array, size_t size)
+void quick_sort_hoare(int *array, size_t size)
 {
 	if (size < 2 || !array)
 	{
@@ -26,42 +26,44 @@ void quick_sort_recur(int *array, int low, int heigh, size_t size)
 
 	if (low < heigh)
 	{
-		index = partition(array, low, heigh, size);
-		quick_sort_recur(array, low, index - 1, size);
+		index = partition_hoare(array, low, heigh, size);
+		quick_sort_recur(array, low, index, size);
 		quick_sort_recur(array, index + 1, heigh, size);
 	}
 }
 /**
- *partition - divides array into 2 parts
+ *partition_hoare - divides array into 2 parts
  *@array: int array
  * @low: int starting index
  * @heigh: int end index
  * @size: size of array
  * Return: int index of pivot
 */
-int partition(int *array, int low, int heigh,  size_t size)
+int partition_hoare(int *array, int low, int heigh,  size_t size)
 {
-	int i = low, j;
 	int pivot = array[heigh];
+	int i = low - 1, j = heigh + 1;
 
-	for (j = low; j < heigh; j++)
+	while (1)
 	{
-		if (array[j] < pivot)
-		{
-			if (array[i] != array[j])
-			{
-				swap(&array[i], &array[j]);
-				print_array(array, size);
-			}
+
+		do {
 			i++;
+		} while (array[i] < pivot);
+
+		do {
+			j--;
+		} while (array[j] > pivot);
+		if (i > j)
+		{
+			return (j);
+		}
+		if (array[i] != array[j])
+		{
+			swap(&array[i], &array[j]);
+			print_array(array, size);
 		}
 	}
-	if (array[i] != array[j])
-	{
-		swap(&array[i], &array[heigh]);
-		print_array(array, size);
-	}
-	return (i);
 }
 /**
  * swap - swap two int
