@@ -1,6 +1,6 @@
 #include "sort.h"
 /**
- * quick_sort_horae - sort int array (Hoare)
+ * quick_sort_hoare - sort int array (Hoare)
  * @array: array of int
  * @size: size of array
  * Return: Nothing
