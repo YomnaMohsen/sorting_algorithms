@@ -24,7 +24,7 @@ void quick_sort_recur(int *array, int low, int heigh, size_t size)
 {
 	int index;
 
-	if (low < heigh)
+	if (low >= 0 && heigh >=0 && low < heigh)
 	{
 		index = partition_hoare(array, low, heigh, size);
 		quick_sort_recur(array, low, index, size);
