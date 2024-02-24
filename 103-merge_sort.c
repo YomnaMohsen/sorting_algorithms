@@ -75,6 +75,6 @@ void merge (int *array, int *buffer, int left, int mid, int right)
 	{
 		array[i] = buffer[i];
 	}
-	printf("[Done]: \n");
+	printf("[Done]: ");
 	print_array(array + left, right - left + 1);
 }
