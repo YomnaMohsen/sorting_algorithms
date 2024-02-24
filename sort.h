@@ -32,6 +32,9 @@ int partition(int *array, int low, int heigh,  size_t size);
 void swap(int *n1, int *n2);
 int partition_hoare(int *array, int low, int heigh,  size_t size);
 void quick_sort_hoare(int *array, size_t size);
+void merge_sort(int *array, size_t size);
+void merge_sort_reqer(int *array, int *buff, int l, int r);
+void merge(int *array, int *buff, int l, int m, int r);
 
 #endif
 
